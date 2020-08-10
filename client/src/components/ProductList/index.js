@@ -8,6 +8,8 @@ import spinner from "../../assets/spinner.gif"
 import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
 import { idbPromise } from "../../utils/helpers";
+import { useDispatch, useSelector } from 'react-redux';
+
 
 function ProductList({}) {
   const state = useSelector((state) => {
@@ -15,7 +17,7 @@ function ProductList({}) {
   });
 
   const dispatch = useDispatch();
-  
+
   const { currentCategory } = state;
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
