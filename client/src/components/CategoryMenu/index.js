@@ -6,7 +6,11 @@ import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from "../../utils/actions"
 import { idbPromise } from '../../utils/helpers';
 
 function CategoryMenu() {
-  const [state, dispatch] = useStoreContext();
+  const state = useSelector((state) => {
+    return state
+  });
+
+  const dispatch = useDispatch();
 
   const { categories } = state;
 
